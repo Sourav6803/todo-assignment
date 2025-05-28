@@ -42,7 +42,7 @@ function App() {
         ) : (
           <>
             <Header onLogout={handleLogout} />
-            <TodoPage userId={userId} />
+            <TodoPage userId={userId} user={user} />
           </>
         )}
 

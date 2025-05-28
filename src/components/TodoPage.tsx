@@ -312,7 +312,7 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { Dialog } from "@headlessui/react";
 import DeleteTodoModal from "../utils/DeleteTodoModal";
-import EditTodoModal from "../utils/EditTodoModal";
+
 
 export interface Todo {
   id: string;
@@ -326,6 +326,10 @@ type Filter = "all" | "active" | "completed";
 
 interface TodoPageProps {
   userId: string;
+  user?: {
+    uid: string;
+    email: string;
+  }
 }
 
 const PAGE_SIZE = 10;
