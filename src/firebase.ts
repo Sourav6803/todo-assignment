@@ -3,7 +3,6 @@
 // ✅ Value imports
 import { initializeApp } from "firebase/app";
 import { getAuth , GoogleAuthProvider} from "firebase/auth";
-import { getAnalytics } from "firebase/analytics";
 
 // ✅ Type-only imports
 import type { FirebaseApp } from "firebase/app";
