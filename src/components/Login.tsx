@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { auth, googleProvider } from "../firebase";
+import {FcGoogle} from "react-icons/fc"
 
 interface LoginProps {
   onLogin: (userId: string) => void;
@@ -34,15 +35,6 @@ const Login = ({ onLogin }: LoginProps) => {
 };
 
 
-//   const handleGoogleLogin = async () => {
-//     try {
-//       const userCred = await signInWithPopup(auth, googleProvider);
-//       onLogin(userCred.user.uid);
-//     } catch (error) {
-//       console.error("Google login failed", error);
-//     }
-//   };
-
 const handleGoogleLogin = async () => {
   try {
     const userCred = await signInWithPopup(auth, googleProvider);
@@ -61,7 +53,7 @@ const handleGoogleLogin = async () => {
 };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 w-full">
       <form onSubmit={handleLogin} className="bg-white p-8 rounded shadow-md space-y-4 w-80">
         <h2 className="text-2xl font-bold">Login</h2>
         <input
@@ -87,9 +79,9 @@ const handleGoogleLogin = async () => {
         <button
           type="button"
           onClick={handleGoogleLogin}
-          className="w-full bg-red-600 text-white p-2 rounded hover:bg-red-700"
+          className="w-full flex items-center justify-evenly bg-red-600 text-white p-2 rounded hover:bg-red-700"
         >
-          Login with Google
+          <FcGoogle /> Login with Google
         </button>
       </form>
     </div>

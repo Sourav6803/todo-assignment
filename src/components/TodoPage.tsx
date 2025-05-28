@@ -410,10 +410,12 @@ const TodoPage: React.FC<TodoPageProps> = ({ userId }) => {
 
   return (
     <div className=" px-4 sm:px-6 py-8 dark:bg-gray-700 w-full h-screen overflow-y-auto">
-      <h1 className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-8">Your Todos</h1>
+
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-8">Your Todos</h1>
 
       {/* Input section */}
-      <div className="flex flex-col md:flex-row md:items-center gap-3 mb-6">
+      <div className=" flex flex-col md:flex-row md:items-center gap-3 mb-6">
         <input
           type="text"
           placeholder="Add new task..."
@@ -545,6 +547,8 @@ const TodoPage: React.FC<TodoPageProps> = ({ userId }) => {
         onClose={() => setDeleteTodo(null)}
         onConfirm={handleDelete}
       />
+      </div>
+      
     </div>
   );
 };
